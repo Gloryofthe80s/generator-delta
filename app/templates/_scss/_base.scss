@@ -1,0 +1,250 @@
+// ------ BASE SETUP ------ //
+
+body {
+  // set what 1em is equal to (default is 14px) and scale
+  // down for screens
+  font-size: 14px;
+
+  @media (max-width: $screen-md-max) { 
+    font-size: 12px;
+  }
+  @media (max-width: $screen-sm-max) { 
+    font-size: 11px;
+  }
+  @media (max-width: $screen-xs-max) { 
+    font-size: 10px;
+  }
+
+  font-family : $sans-serif;
+}
+
+html,body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden; 
+  overflow-y: auto;
+}
+
+//------ HEADER ------//
+
+header {
+  position: relative;
+  background-color: $true-white;
+  font-size: 1em;
+  background-color: $true-black;
+  color: $gray;
+  border-bottom: 3px solid $red;
+  text-align: right;
+  height: 50px;
+
+  @media (max-width: $screen-sm-max) { 
+
+  }
+  
+  @media (max-width: $screen-xs-max) { 
+    height: 25px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .left {
+    text-align: left;
+    width: 60%;
+    margin-top: 14px;
+  }
+
+  .right {
+    text-align: right;
+
+    p {
+      font-style: italic;
+      line-height: 10px;
+      margin-top: 8px;
+    }
+  }
+
+  .header-logo {
+    position: absolute;
+    left: 50%;
+    margin-left : -63px;
+
+    @media (max-width: $screen-sm-max) { 
+
+    }
+
+    @media (max-width: $screen-xs-max) { 
+      width: 62px;
+      margin-left: -31px;
+    }
+
+    .header-strip {
+      .red-strip {
+        display: none;
+      }
+    }
+  } //end .header-logo
+
+} // end header
+
+
+
+
+
+//------ FOOTER ------//
+
+footer {
+  background-color: $true-black;
+  color: $gray;
+  border-top: 3px solid $red;
+  margin-top: 6em;
+  padding-bottom: 4em;
+
+  .logo-container {
+    position: relative;
+
+    .footer-logo {
+      position: absolute;
+      left: 50%;
+      top: -60px;
+      //offset by half the width to center
+      margin-left: -64px;
+
+      @media (max-width: $screen-sm-max) {
+        width: 80px;
+        top: -36px;
+        //adjust center offset
+        margin-left: -40px;
+      }
+    }
+  }
+
+  .footer-content {
+
+    a {
+      color: $gray;
+      
+      @media (max-width: $screen-sm-max) {
+        text-decoration: underline;
+
+      }
+    }
+
+    .copy-container {
+      margin-top: 3em;
+
+      @media (max-width: $screen-sm-max) {
+        margin-top: 5em;
+      }
+      
+      span {
+        color: $red;
+      }
+
+      h2 {
+        font-weight: $bold;
+        font-size: 1.5em;
+        color: $red;
+        margin-top: 0;
+      }
+      
+      .who-is-uscca {
+        font-style: italic;
+      }
+    }// end copy-container
+
+    .left {
+
+      p {
+        width: 80%;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        margin-top: 2em;
+        
+        h2 {
+          text-align: center;
+        }
+        
+        p {
+          width: 75%;
+          text-align: center;
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 1em;
+        }
+      }
+    }
+
+    .right {
+      img {
+        float: right;
+        margin-top: 1em;
+      }
+
+      p {
+        font-size: 1.25em;
+        text-align: right;
+      }
+
+      @media (max-width: $screen-sm-max) { 
+        p {
+          text-align: center;
+        }
+
+        img {
+          float: none;
+          display: block;
+          margin: 0 auto;
+          width: 300px;
+        }
+      }
+
+      @media (max-width: $screen-xs-max) { 
+        img {
+          width: 250px;
+        }
+      }
+    }// end .right
+
+    .copyright-section {
+      margin-top: 1em;
+      border-top: 1px solid darken($gray, 25%);
+      padding-top: .5em;
+      
+      .link-bundle {
+        text-align: right;
+        
+        @media (max-width: $screen-xs-max) { 
+          text-align: center;
+        }
+
+        a {
+          margin-right: 10px;
+        }
+      }
+
+
+      @media (max-width: $screen-xs-max) { 
+        text-align: center;
+        padding-top: 1em;
+
+        a {
+          display: block;
+        }
+      }
+    }//end .copyright-section
+
+  }// end .footer-content
+}// footer
+
+
+
+
+
+
+
+
+

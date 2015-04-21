@@ -1,0 +1,263 @@
+// ------ Membership Pricing Component ------ //
+
+// Membership Pricing Component Colors //
+$membership-silver   : #c8c8c8;
+$membership-gold     : #e1cd29;
+$membership-platinum : #0a315a;
+$membership-see-more : #cfe7ff;
+$membership-see-more-btn-blue   : #cfe7ff;
+
+// Requires JS to toggle drawers on mobile
+.membership-component {
+
+	width: 100%;
+	margin: 80px 0;
+
+	.membership-type {
+		position: relative;
+		font-family: $serif;
+		color: $true-black;
+		text-align: center;
+		padding-top: 5px;
+		margin-bottom: 8px;
+
+		.title {
+			font-weight: 300;
+			font-size: 2em;
+
+			@media (min-width: $screen-md-min) { 
+				margin-bottom: 0;
+			}
+
+			@media (max-width: $screen-sm-max) { 
+				font-size: 2.5em;
+			}
+		}
+
+		//only seen on lg and md
+		.best-value-flag {
+			position: absolute;
+			right: -20px;
+			top: -75px;
+			width: 91px;
+			height: 104px;
+
+			@media (max-width: $screen-md-max) { 
+				width: 68px;
+				height: 78px;
+				right: -12px;
+				top: -53px;
+			}
+		}// end .best-value-flag
+
+		// only seen on sm and xs
+		.most-popular-box {
+			display: block;
+			margin: 0 auto;
+			z-index: 1;
+			background-color: $popular-yellow;
+			font-family: $sans-serif;
+			font-style: italic;
+			color: $true-black;
+			font-size: 2em;
+			position: relative;
+			top: -8px;
+			// top shadow, bottom shadow
+			box-shadow: 0px -1px 4px -2px darken($bg-gray, 50%), 
+			            0 4px 2px -2px $true-black;
+
+			p {
+				margin: 0;
+			}
+
+			@media (max-width: $screen-sm-max) { 
+				width: 170px;
+			}
+			@media (max-width: $screen-xs-max) { 
+				width: 135px;
+			}
+		}// end .most-popular-box
+
+		.price-container {
+			margin-bottom: 1em;
+
+			.price-monthly {
+				display: inline-block;
+				font-weight: $bold;
+				font-size: 3.5em;
+				line-height: 10px;
+				margin-right: .1em;
+
+				@media (min-width: $screen-md-min) { 
+					margin: 15px 0 25px 0;
+				}
+			}
+
+			.price-single-payment {
+				display: inline-block;
+				text-align: left;
+				line-height: 10px;
+				font-size: 1.2em;
+
+				p {
+					margin-bottom: 0;
+				}
+			}
+		}// end .price-container
+		
+		button {
+			display: block;
+			margin: 0 auto;
+			font-family: $sans-serif;
+			color: $true-white;
+			border: none;
+			border-radius: 8px;
+			margin-bottom: .25em;
+			padding: 5px 20px;
+			font-size: 1.75em;
+
+			//bg gradient
+			background: #7db9e8; /* Old browsers */
+			background: -moz-linear-gradient(top,  #7db9e8 0%, #2989d8 63%, #1e5799 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7db9e8), color-stop(63%,#2989d8), color-stop(100%,#1e5799)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  #7db9e8 0%,#2989d8 63%,#1e5799 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  #7db9e8 0%,#2989d8 63%,#1e5799 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  #7db9e8 0%,#2989d8 63%,#1e5799 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  #7db9e8 0%,#2989d8 63%,#1e5799 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
+			
+			//invert the gradient on hover
+			&:hover {
+			  background: #1e5799; /* Old browsers */
+			  background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 63%, #7db9e8 100%); /* FF3.6+ */
+			  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(63%,#2989d8), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+			  background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 63%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+			  background: -o-linear-gradient(top,  #1e5799 0%,#2989d8 63%,#7db9e8 100%); /* Opera 11.10+ */
+			  background: -ms-linear-gradient(top,  #1e5799 0%,#2989d8 63%,#7db9e8 100%); /* IE10+ */
+			  background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 63%,#7db9e8 100%); /* W3C */
+			  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+			}
+		}// end button
+
+		.protection {
+			font-weight: 300;
+			font-size: 1.5em;
+		}
+
+		.see-more {
+			display: inline-block;
+			width: 100%;
+			font-size: 1.5em;
+			background-color: $membership-see-more-btn-blue;
+			font-family: $sans-serif;
+			font-weight: $thin;
+			padding: 7px 0;
+			cursor: pointer;
+			margin-bottom: 0;
+		}
+
+		.reveal-arrow {
+			display: inline-block;
+			margin-left: 4px;
+		}
+
+		.reveal {
+			max-height: 0px;
+			overflow: hidden;
+			@include transition(.3s, all);
+
+			@media (min-width: $screen-sm-max) { 
+				max-height: 1000px;
+			}
+
+			&.active {
+				max-height: 1000px;;
+				@include transition(.3s, all);
+			}
+			
+			.feature-box {
+				border-bottom: 2px solid $true-white;
+				
+				.value {
+					font-weight: $bold;
+					font-size: 1.5em;
+					padding-top: 10px;
+					margin-bottom: 0;
+					@media (max-width: $screen-sm-max) { 
+						font-size: 2em;
+					}
+				}
+
+				.feature {
+					font-size: 1.25em;
+					font-family: $sans-serif;
+
+					@media (max-width: $screen-sm-max) { 
+						font-size: 1.75em;
+					}
+				}
+			}// end .feature-box
+
+			.see-less {
+				display: inline-block;
+				width: 100%;
+				font-size: 1.5em;
+				background-color: $membership-see-more-btn-blue;
+				border-bottom: 2px solid $true-white;
+				font-family: $sans-serif;
+				font-weight: $thin;
+				padding: 7px 0;
+				cursor: pointer;
+				margin-bottom: 0;
+			}
+		}// end .reveal
+
+		.cap {
+			padding: 8px 0;
+
+			.price-monthly {
+				font-size: 2.5em;
+			}
+
+			.price-single-payment {
+				font-size: 1.1em;
+				margin-bottom: 4px;
+			}
+		}
+
+		&.silver {
+			background-color: $membership-silver;
+			color: $true-black;
+
+			.feature-box {
+				background-color: #f2f2f2;
+			}
+		}// end .silver
+
+		&.gold {
+			background-color: $membership-gold;
+			color: $true-black;
+
+			.feature-box {
+				background-color: #faf4c3;
+			}
+		}// end .gold
+
+		&.platinum {
+			color: $true-white;
+			background-color: $membership-platinum;
+
+			.see-more, .see-less {
+				color: $true-black;
+			}
+
+			.feature-box {
+				background-color: #d2dfeb;
+				color: $true-black;
+			}
+		}// end .platinum
+	}// end .membership-type
+}// end .membership-component
+
+
+

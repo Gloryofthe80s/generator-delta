@@ -1,0 +1,15 @@
+// ------ IMPORT ALL STYLES------ //
+
+// bower:scss
+@import '../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+// endbower
+
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'base.scss'; 
+@import 'components.scss';
+
+@import 'custom.scss'; //project specific styles
+
+
+

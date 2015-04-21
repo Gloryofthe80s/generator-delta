@@ -1,0 +1,33 @@
+{
+  "name": "generator-delta",
+  "version": "0.0.0",
+  "description": "A baseline project scaffold for the front end stack of Delta Defense",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gloryofthe80s/generator-delta"
+  },
+  "author": {
+    "name": "Jacob Wielgus",
+    "email": "gloryoftheeighties@gmail.com",
+    "url": "https://github.com/Gloryofthe80s"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.19.0",
+    "chalk": "^1.0.0",
+    "yosay": "^1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
