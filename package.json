@@ -1,6 +1,6 @@
 {
   "name": "generator-delta",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A baseline project scaffold for the front end stack of Delta Defense",
   "license": "MIT",
   "main": "app/index.js",
