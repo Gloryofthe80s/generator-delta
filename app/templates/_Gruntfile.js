@@ -31,18 +31,13 @@ module.exports = function(grunt) {
 		      style: 'expanded',
 		      compass: true
 		    },
+		    //what individual .css files do you want made?
 		    files: {
-		      '<%= project.app %>/css/style.css': '<%= project.scss %>',
+		      '<%= project.app %>/css/style.css': '<%= project.scss %>'
 		    }
 		  },
 		  dist: {
-		    options: {
-		      style: 'compressed',
-		      compass: true
-		    },
-		    files: {
-		      '<%= project.app %>/css/style.css': '<%= project.css %>'
-		    }
+
 		  }
 		}, //end sass
 
@@ -68,6 +63,11 @@ module.exports = function(grunt) {
 		 * UseminPrepare (build prep (minify, concat, uglify, etc)
 		 */
 		useminPrepare: {
+		  //what html files do you want blocks replaced in?
+		  html: [
+		  '<%= project.app %>/index.html'
+		  ],
+
 		  options: {
 		    dest: '<%= project.dist %>',
 		    flow: {
@@ -80,8 +80,7 @@ module.exports = function(grunt) {
 		            post: {}
 		          }
 		        }
-		  },
-		  html: '<%= project.app %>/index.html'
+		  }
 		}, //end useminPrepare
 
 
@@ -90,13 +89,17 @@ module.exports = function(grunt) {
 		 */
 		usemin: {
 		  options: {
-		    assetsDirs: [
-		      '<%= project.dist %>',
-		      '<%= project.dist %>/img',
-		      '<%= project.dist %>/styles'
-		    ]
+		    // assetsDirs: [
+		    //   '<%= project.dist %>',
+		    //   '<%= project.dist %>/img',
+		    //   '<%= project.dist %>/styles'
+		    // ]
 		  },
-		  html: ['<%= project.dist %>/{,*/}*.html'],
+		  //what html files (in dist) do you want blocks replaced in?
+		  html: [
+			'<%= project.dist %>/{,*/}*.html',
+			'<%= project.dist %>/{,*/}*.asp'
+		  ],
 		  css: ['<%= project.dist %>/styles/{,*/}*.css']
 		}, //end usemin
 
@@ -112,10 +115,7 @@ module.exports = function(grunt) {
 		      cwd: '<%= project.app %>',
 		      dest: '<%= project.dist %>',
 		      src: [
-		        '*.{ico,png,txt}',
-		        'images/{,*/}*.webp',
-		        '{,*/}*.html',
-		        'styles/fonts/{,*/}*.*'
+		        'index.html',
 		      ]
 		    }, {
 		      src: 'node_modules/apache-server-configs/dist/.htaccess',
@@ -128,13 +128,25 @@ module.exports = function(grunt) {
 		      dest: '<%= project.dist %>'
 		    }]
 		  }, //end dist
+		  
+		  //copy all styles to dist
 		  styles: {
 		    expand: true,
 		    dot: true,
-		    cwd: '<%= project.app %>/styles',
-		    dest: '.tmp/styles/',
+		    cwd: '<%= project.app %>/css',
+		    dest: '<%= project.dist %>/css',
 		    src: '{,*/}*.css'
 		  },
+
+		  //copy all scripts to dist
+		  scripts: {
+		    expand: true,
+		    dot: true,
+		    cwd: '<%= project.app %>/scripts',
+		    dest: '<%= project.dist %>/scripts',
+		    src: '{,*/}*.js'
+		  },
+		  
 		  //make an .asp version of all .html files
 		  asp: {
 		    files: [{
@@ -147,6 +159,7 @@ module.exports = function(grunt) {
 		      ext: '.asp'
 		    }]
 		  },
+    	
     	//copy all images to dist
 		  images: {
 		      files: [
@@ -284,19 +297,16 @@ module.exports = function(grunt) {
  	grunt.registerTask('build', [
        'clean:dist',
        'useminPrepare',
-       'concat:generated',
-       'copy:dist',
        'usemin',
+       'concat',
+       'copy:dist',
+       'copy:styles',
+       'copy:scripts',
        'copy:images',
        'copy:asp',
+       'usemin',
        'clean:distHtml'
    	]);
 
 };
-
-
-
-
-
-
 

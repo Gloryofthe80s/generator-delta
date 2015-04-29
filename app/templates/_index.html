@@ -23,17 +23,19 @@
   <!-- VENDOR STYLES -->
   <!-- bower:css -->
   <!-- build:css styles/vendor.css -->
-
+  <!-- vendor stylesheets go here -->
   <!-- endbuild -->
   <!-- endbower -->
-
-  <script type="text/javascript" src="/js/Ajax_DeltaDefense_ProductCartActions.js?<%=DeltaDefenseVersion%>"></script>
   
   <!-- USER STYLES -->
-  <!-- build:css styles/main.css -->
+  <!-- build:css css/main.css -->
   <link rel="stylesheet" href="css/style.css">
   <!-- endbuild -->
 
+  <!-- DELTA SCRIPTS -->
+  <script type="text/javascript" src="/js/Ajax_DeltaDefense_ProductCartActions.js?<%=DeltaDefenseVersion%>"></script>
+  <script type="text/javascript" src="/js/DeltaDefense_Master.js?v=<%=DeltaDefenseVersion%>"></script>
+  
   <!-- Optimizely -->
   <script src="//cdn.optimizely.com/js/42699537.js"></script>
 
@@ -125,14 +127,22 @@
   <!-- build:js scripts/vendor.js -->
   <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="../bower_components/html5shiv/dist/html5shiv.js"></script>
-  <script type="text/javascript" src="../bower_components/js/DeltaDefense_Master.js?v=<%=DeltaDefenseVersion%>"></script>
   <!-- endbuild -->
   <!-- endbower -->
+
+  <!-- DEV ONLY VENDOR SCRIPTS -->
+  <!-- These have correct asset paths for local server, but won't get built -->
+  <!-- build:dev-only -->
+  <script type="text/javascript" src="jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="html5shiv/dist/html5shiv.js"></script>
+  <!-- endbuild -->
 
   <!-- USER SCRIPTS -->
   <!-- build:js scripts/main.js -->
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
+
+
 
 </body>
 

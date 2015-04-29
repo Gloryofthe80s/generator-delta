@@ -13,6 +13,10 @@ $membership-see-more-btn-blue   : #cfe7ff;
 	width: 100%;
 	margin: 80px 0;
 
+	a {
+		text-decoration: none;
+	}
+
 	.membership-type {
 		position: relative;
 		font-family: $serif;
@@ -114,7 +118,12 @@ $membership-see-more-btn-blue   : #cfe7ff;
 			border-radius: 8px;
 			margin-bottom: .25em;
 			padding: 5px 20px;
+			min-width: 240px;
 			font-size: 1.75em;
+
+			@media (max-width: $screen-xs-max) { 
+				font-size: 2em;
+			}
 
 			//bg gradient
 			background: #7db9e8; /* Old browsers */
