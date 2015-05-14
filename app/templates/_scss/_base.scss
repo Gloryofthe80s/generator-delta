@@ -1,24 +1,24 @@
 // ------ BASE SETUP ------ //
 
 body {
-  // set what 1em is equal to (default is 14px) and scale
+  // set what 1em is equal to (default is 16px) and scale
   // down for screens
-  font-size: 14px;
+  font-size: 16px;
 
   @media (max-width: $screen-md-max) { 
-    font-size: 12px;
+    font-size: 14px;
   }
   @media (max-width: $screen-sm-max) { 
-    font-size: 11px;
+    font-size: 12px;
   }
   @media (max-width: $screen-xs-max) { 
-    font-size: 10px;
+
   }
 
   font-family : $sans-serif;
 }
 
-html,body {
+html, body {
   width: 100%;
   margin: 0px;
   padding: 0px;
@@ -37,10 +37,6 @@ header {
   border-bottom: 3px solid $red;
   text-align: right;
   height: 50px;
-
-  @media (max-width: $screen-sm-max) { 
-
-  }
   
   @media (max-width: $screen-xs-max) { 
     height: 25px;
@@ -72,7 +68,8 @@ header {
     margin-left : -63px;
 
     @media (max-width: $screen-sm-max) { 
-
+      width: 80px
+      margin-left: -40px;
     }
 
     @media (max-width: $screen-xs-max) { 
@@ -179,9 +176,15 @@ footer {
     }
 
     .right {
-      img {
-        float: right;
+          
+      .business-links {
+        display: block;
         margin-top: 1em;
+        float: right;
+
+        img {
+          margin-left: .5em;
+        }
       }
 
       p {
@@ -194,17 +197,11 @@ footer {
           text-align: center;
         }
 
-        img {
+        .business-links {
           float: none;
           display: block;
           margin: 0 auto;
-          width: 300px;
-        }
-      }
-
-      @media (max-width: $screen-xs-max) { 
-        img {
-          width: 250px;
+          width: 260px;
         }
       }
     }// end .right

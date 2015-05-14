@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 		    },
 		    //what individual .css files do you want made?
 		    files: {
-		      '<%= project.app %>/css/style.css': '<%= project.scss %>'
+		      'app/css/style.css': 'app/scss/style.scss'
 		    }
 		  },
 		  dist: {
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 		    tasks: ['sass:dev'],
 		  },
 		  html: {
-		  	files: '<%= project.app %>/index.html',
+		  	files: '<%= project.app %>/*.html',
 		  },
 			options: {
 				livereload: true,
@@ -64,8 +64,9 @@ module.exports = function(grunt) {
 		 */
 		useminPrepare: {
 		  //what html files do you want blocks replaced in?
+		  //(all .html files by default)
 		  html: [
-		  '<%= project.app %>/index.html'
+		  	'app/*.html'
 		  ],
 
 		  options: {
@@ -89,11 +90,7 @@ module.exports = function(grunt) {
 		 */
 		usemin: {
 		  options: {
-		    // assetsDirs: [
-		    //   '<%= project.dist %>',
-		    //   '<%= project.dist %>/img',
-		    //   '<%= project.dist %>/styles'
-		    // ]
+		    
 		  },
 		  //what html files (in dist) do you want blocks replaced in?
 		  html: [
@@ -287,6 +284,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('serve', [
       'express',
       'open',
+      'sass:dev',
       'watch'
   	]);
 
@@ -303,9 +301,9 @@ module.exports = function(grunt) {
        'copy:styles',
        'copy:scripts',
        'copy:images',
-       'copy:asp',
-       'usemin',
-       'clean:distHtml'
+       // 'copy:asp',
+       'usemin'
+       // 'clean:distHtml'
    	]);
 
 };

@@ -1,8 +1,3 @@
-<!--#include virtual="Include_Files.asp" -->
-<!-- METADATA TYPE="typelib" FILE="C:\Program Files\Common Files\System\ado\msado15.dll" -->
-<!--#include virtual="TrackingProcessing.asp" -->
-
-
 <!DOCTYPE html>
 
 <html>
@@ -22,7 +17,7 @@
 
   <!-- VENDOR STYLES -->
   <!-- bower:css -->
-  <!-- build:css styles/vendor.css -->
+  <!-- build:css css/vendor.css -->
   <!-- vendor stylesheets go here -->
   <!-- endbuild -->
   <!-- endbower -->
@@ -33,13 +28,13 @@
   <!-- endbuild -->
 
   <!-- DELTA SCRIPTS -->
-  <script type="text/javascript" src="/js/Ajax_DeltaDefense_ProductCartActions.js?<%=DeltaDefenseVersion%>"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  
   <script type="text/javascript" src="/js/DeltaDefense_Master.js?v=<%=DeltaDefenseVersion%>"></script>
   
   <!-- Optimizely -->
   <script src="//cdn.optimizely.com/js/42699537.js"></script>
 
-  <!-- GOOGLE TRACKING -->
+  <!-- TRACKING -->
   <!--#include virtual="Include_DeltaDefense_KissMetrics_Upper.html" -->
   <!--#include virtual="Include_DeltaDefense_GoogleAnalytic_Upper.html" -->
 
@@ -90,16 +85,23 @@
               <div class="right col-md-6 col-xs-12">
                 <p>U.S. Concealed Carry Association</p>
                 <p>877-677-1919 <span>|</span> <a href="https://www.usconcealedcarry.com/contact/" target="_blank">Contact Us</a></p>
-                <a href="http://www.bbb.org/wisconsin/business-reviews/gun-safety-and-marksmanship-instruction/delta-defense-llc-in-west-bend-wi-1000003792/" target="_blank"> 
-                  <img src="img/bbb.png">
-                </a>
+                
+                <div class="business-links">
+                  <a href="http://www.bbb.org/wisconsin/business-reviews/gun-safety-and-marksmanship-instruction/delta-defense-llc-in-west-bend-wi-1000003792/" target="_blank"> 
+                    <img src="img/bbb.png">
+                  </a>
+
+                  <a href="http://www.inc.com/profile/delta-defense" target="_blank"> 
+                    <img src="img/inc500.png">
+                  </a>
+                </div><!-- /business-links -->
               </div><!-- /col -->
             </div><!-- /row -->
             
             <div class="row">
               <div class="copyright-section">
-                <div class="col-sm-6 col-xs-12">
-                  <p>&copy; 2003-<%= Year(now) %>  Delta Defense, LLC. All Rights Reserved. Reproduction without permission prohibited.</p>
+                <div class="col-sm-6 col-xs-12" id="core_MasterRightReserved">
+                  <p>&copy; 2003-##core_MasterRightReserved## Delta Defense, LLC. All Rights Reserved. Reproduction without permission prohibited.</p>
                 </div>
                 
                 <div class="col-sm-6 col-xs-12">
@@ -119,8 +121,6 @@
 
   
   <!--#include virtual="Include_GoogleAnalytics_Remarketing.html" -->
-  <!--#include virtual="Include_DeltaDefense_Core_ProcessingBuyForm.html"-->
-
 
   <!-- VENDOR SCRIPTS -->
   <!-- bower:js -->
@@ -141,8 +141,6 @@
   <!-- build:js scripts/main.js -->
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
-
-
 
 </body>
 
