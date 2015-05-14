@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 		    },
 		    //what individual .css files do you want made?
 		    files: {
-		      'app/css/style.css': 'app/scss/style.scss'
+		      'app/css/main.css': 'app/scss/style.scss'
 		    }
 		  },
 		  dist: {
