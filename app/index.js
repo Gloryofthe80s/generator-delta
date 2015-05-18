@@ -22,12 +22,10 @@ var DeltaGenerator = yeoman.generators.Base.extend({
   },
 
   scaffoldFolders: function() {
-      this.mkdir("app");
-      this.mkdir("app/css");
-      this.mkdir("app/img");
-      this.mkdir("app/scripts");
-      this.mkdir("app/scss");
-      this.mkdir("dist");
+      this.mkdir("css");
+      this.mkdir("img");
+      this.mkdir("scripts");
+      this.mkdir("scss");
   },
 
   copyMainFiles: function() {
@@ -40,7 +38,7 @@ var DeltaGenerator = yeoman.generators.Base.extend({
     //html
     this.fs.copyTpl( 
       this.templatePath('_index.html'), 
-      this.destinationPath('app/index.html'),
+      this.destinationPath('index.html'),
       { site_name : context.site_name },
       {
         //only evaluate {{= }} in the markup
@@ -54,49 +52,51 @@ var DeltaGenerator = yeoman.generators.Base.extend({
     //scss
     this.fs.copy( 
       this.templatePath("_scss/_base.scss"), 
-      this.destinationPath("app/scss/base.scss") 
+      this.destinationPath("scss/base.scss") 
     );
     this.fs.copy( 
       this.templatePath("_scss/_components.scss"), 
-      this.destinationPath("app/scss/components.scss") 
+      this.destinationPath("scss/components.scss") 
     );
     this.fs.copy( 
       this.templatePath("_scss/_custom.scss"), 
-      this.destinationPath("app/scss/custom.scss") 
+      this.destinationPath("scss/custom.scss") 
     );
     this.fs.copy( 
       this.templatePath("_scss/_fonts.scss"), 
-      this.destinationPath("app/scss/fonts.scss") 
+      this.destinationPath("scss/fonts.scss") 
     );
     this.fs.copy( 
       this.templatePath("_scss/_style.scss"), 
-      this.destinationPath("app/scss/style.scss") 
+      this.destinationPath("scss/style.scss") 
     );
     this.fs.copy( 
       this.templatePath("_scss/_variables.scss"), 
-      this.destinationPath("app/scss/variables.scss") 
+      this.destinationPath("scss/variables.scss") 
     );
-    
-    
-    //javascript
-    this.fs.copy( 
-      this.templatePath("_main.js"), 
-      this.destinationPath("app/scripts/main.js") 
-    ); 
 
+
+    //JS
+    this.directory('_scripts', 'scripts');
+    
+    // this.fs.copy( 
+    //   this.templatePath("scripts/vendor"), 
+    //   this.destinationPath("scripts/vendor") 
+    // );
+    
 
     //images  
     this.fs.copy( 
       this.templatePath("_img/_bbb.png"), 
-      this.destinationPath("app/img/bbb.png") 
+      this.destinationPath("img/bbb.png") 
     ); 
     this.fs.copy( 
       this.templatePath("_img/_inc500.png"), 
-      this.destinationPath("app/img/inc500.png") 
+      this.destinationPath("img/inc500.png") 
     ); 
     this.fs.copy( 
       this.templatePath("_img/_USCCA-logo.png"), 
-      this.destinationPath("app/img/USCCA-logo.png") 
+      this.destinationPath("img/USCCA-logo.png") 
     ); 
 
     
@@ -110,11 +110,6 @@ var DeltaGenerator = yeoman.generators.Base.extend({
       this.templatePath("_Gruntfile.js"), 
       this.destinationPath("Gruntfile.js") 
     ); 
-    this.fs.copyTpl( 
-      this.templatePath("_bower.json"), 
-      this.destinationPath("bower.json"),
-      { site_name : context.site_name }
-    );    
     
     console.log('\n All done! \n Take care and stay safe!')
   }
