@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 		    tasks: ['sass:dev'],
 		  },
 		  html: {
-		  	files: '*.html',
+		  	files: '/*.html',
 		  },
 			options: {
 				livereload: true,
