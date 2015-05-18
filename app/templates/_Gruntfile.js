@@ -112,28 +112,19 @@ module.exports = function(grunt) {
 		      cwd: '<%= project.app %>',
 		      dest: '<%= project.dist %>',
 		      src: [
-		        '*.html',
+		        '*.html'
 		      ]
-		    }, {
-		      src: 'node_modules/apache-server-configs/dist/.htaccess',
-		      dest: '<%= project.dist %>/.htaccess'
-		    }, {
-		      expand: true,
-		      dot: true,
-		      cwd: '.',
-		      src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
-		      dest: '<%= project.dist %>'
 		    }]
 		  }, //end dist
 		  
 		  //copy all styles to dist
-		  styles: {
-		    expand: true,
-		    dot: true,
-		    cwd: '<%= project.app %>/css',
-		    dest: '<%= project.dist %>/css',
-		    src: '{,*/}*.css'
-		  },
+		  // styles: {
+		  //   expand: true,
+		  //   dot: true,
+		  //   cwd: '<%= project.app %>/css',
+		  //   dest: '<%= project.dist %>/css',
+		  //   src: '{,*/}*.css'
+		  // },
 
 		  //copy all scripts to dist
 		  scripts: {
@@ -298,7 +289,7 @@ module.exports = function(grunt) {
        'usemin',
        'concat',
        'copy:dist',
-       'copy:styles',
+       // 'copy:styles',
        'copy:scripts',
        'copy:images',
        // 'copy:asp',
