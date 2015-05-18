@@ -112,7 +112,7 @@ module.exports = function(grunt) {
 		      cwd: '<%= project.app %>',
 		      dest: '<%= project.dist %>',
 		      src: [
-		        'index.html',
+		        '*.html',
 		      ]
 		    }, {
 		      src: 'node_modules/apache-server-configs/dist/.htaccess',
