@@ -77,12 +77,12 @@ var DeltaGenerator = yeoman.generators.Base.extend({
 
 
     //JS
-    this.directory('_scripts', 'scripts');
+    this.directory('_scripts/_vendor', 'scripts/vendor');
     
-    // this.fs.copy( 
-    //   this.templatePath("scripts/vendor"), 
-    //   this.destinationPath("scripts/vendor") 
-    // );
+    this.fs.copy( 
+      this.templatePath("_scripts/_main.js"), 
+      this.destinationPath("scripts/main.js") 
+    );
     
 
     //images  
